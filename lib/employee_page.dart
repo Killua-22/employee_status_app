@@ -1,7 +1,6 @@
 import 'package:employee_status_app/addemployee.dart';
 import 'package:flutter/material.dart';
 import '../Tabs/allemployees.dart';
-import '../Tabs/activeemployees.dart';
 
 class employeeUI extends StatefulWidget {
   const employeeUI({Key? key}) : super(key: key);
@@ -29,25 +28,8 @@ class _employeeUIState extends State<employeeUI> {
             centerTitle: true,
             backgroundColor: Theme.of(context).primaryColor,
             elevation: 0,
-            bottom: const TabBar(
-              padding: EdgeInsets.only(bottom: 7),
-              indicatorSize: TabBarIndicatorSize.tab,
-              indicatorPadding: EdgeInsets.fromLTRB(50, 20, 50, 0),
-              indicatorColor: Color.fromARGB(255, 77, 203, 214),
-              tabs: [
-                Text("All",
-                    style: TextStyle(color: Colors.white, fontSize: 18)),
-                Text("Active",
-                    style: TextStyle(color: Colors.white, fontSize: 18)),
-              ],
-            ),
           ),
-          body: TabBarView(
-            children: [
-              allemployeesUI(),
-              activeemployeesUI(),
-            ],
-          ),
+          body: allemployeesUI(),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (_) {
