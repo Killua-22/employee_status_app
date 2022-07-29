@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
           if (snapshot.hasError) {
             print("error");
           }
-
           if (snapshot.connectionState == ConnectionState.done) {
             return employeeUI();
           }
